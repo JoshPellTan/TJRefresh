@@ -10,7 +10,7 @@
 #define TJRefresh_h
 
 #import "UIScrollView+TJRefresher.h"
-#import "TJRefreshAnimation.h"
+#import "TJRefreshHeader.h"
 #import "TJRefreshFooter.h"
 
 #endif /* TJRefresh_h */

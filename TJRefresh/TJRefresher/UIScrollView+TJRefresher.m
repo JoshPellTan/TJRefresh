@@ -7,14 +7,14 @@
 //
 
 #import "UIScrollView+TJRefresher.h"
-#import "TJRefreshAnimation.h"
+#import "TJRefreshHeader.h"
 #import "TJRefreshFooter.h"
 #import <objc/runtime.h>
 
 @implementation UIScrollView (TJRefresher)
 
 - (void)addRefreshHeaderWithHandle:(void (^)())handle {
-    TJRefreshAnimation * header = [[TJRefreshAnimation alloc]init];
+    TJRefreshHeader * header = [[TJRefreshHeader alloc]init];
     header.handle = handle;
     self.header = header;
     
@@ -24,23 +24,20 @@
     TJRefreshFooter * footer = [[TJRefreshFooter alloc]init];
     footer.handle = handle;
     self.footer = footer;
-    
 }
 
 #pragma mark - Associate
 static const void *TJRefreshHeaderKey = &TJRefreshHeaderKey;
-
-- (void)setHeader:(TJRefreshAnimation *)header {
+- (void)setHeader:(TJRefreshHeader *)header {
     
     if (self.header != header) {
         [self.header removeFromSuperview];
         [self insertSubview:header atIndex:0];
-        
     }
     objc_setAssociatedObject(self, TJRefreshHeaderKey, header, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (TJRefreshAnimation *)header {
+- (TJRefreshHeader *)header {
     return objc_getAssociatedObject(self, &TJRefreshHeaderKey);
 }
 
@@ -50,7 +47,7 @@ static const void *TJRefreshFooterKey = &TJRefreshFooterKey;
     if (self.footer != footer) {
         [self.footer removeFromSuperview];
         [self insertSubview:footer atIndex:0];
-        
+
     }
     objc_setAssociatedObject(self, TJRefreshFooterKey, footer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -58,9 +55,5 @@ static const void *TJRefreshFooterKey = &TJRefreshFooterKey;
 -(TJRefreshFooter *)footer{
     return objc_getAssociatedObject(self, &TJRefreshFooterKey);
 }
-
-#pragma mark override
-
-
 
 @end

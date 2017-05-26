@@ -1,5 +1,5 @@
 //
-//  TJRefreshAnimation.h
+//  TJRefreshHeader.h
 //  TJRefresh
 //
 //  Created by TanJian on 17/5/23.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TJRefreshAnimation : UIView
+@interface TJRefreshHeader : UIView
 
 @property (nonatomic, copy) void(^handle)();
 

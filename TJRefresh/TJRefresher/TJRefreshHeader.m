@@ -1,12 +1,12 @@
 //
-//  TJRefreshAnimation.m
+//  TJRefreshHeader.m
 //  TJRefresh
 //
 //  Created by TanJian on 17/5/23.
 //  Copyright © 2017年 Joshpell. All rights reserved.
 //
 
-#import "TJRefreshAnimation.h"
+#import "TJRefreshHeader.h"
 #import <CoreText/CoreText.h>
 #import "CALayer+TJFrame.h"
 #import "UIScrollView+TJRefresher.h"
@@ -19,7 +19,7 @@ const CGFloat TJSquareW = 10;
 
 const CGFloat shortLineWidth = TJRefreshHeaderHeight-TJSquareW-TJMargin*3;
 
-@interface TJRefreshAnimation ()
+@interface TJRefreshHeader ()
 
 @property (nonatomic, weak  ) UIScrollView * scrollView;
 @property (nonatomic, assign) CGFloat layerStrokenValue;
@@ -47,7 +47,7 @@ const CGFloat shortLineWidth = TJRefreshHeaderHeight-TJSquareW-TJMargin*3;
 
 @end
 
-@implementation TJRefreshAnimation
+@implementation TJRefreshHeader
 
 -(instancetype)init{
     
@@ -256,7 +256,7 @@ const CGFloat shortLineWidth = TJRefreshHeaderHeight-TJSquareW-TJMargin*3;
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
     
-    if (newSuperview) {
+    if (newSuperview && [newSuperview isKindOfClass:[UIScrollView class]]) {
         
         [self removeObserver];
         self.scrollView = (UIScrollView *)newSuperview;

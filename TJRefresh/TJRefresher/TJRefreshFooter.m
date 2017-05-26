@@ -41,8 +41,6 @@ const CGFloat TJLoaderPullLen = 64.0;
         
         [self removeObserver];
         self.scrollView = (UIScrollView *)newSuperview;
-
-        self.center = CGPointMake(self.scrollView.bounds.size.width*0.2, self.scrollView.contentSize.height +32);
         
         [self addObserver];
     }else {
@@ -64,7 +62,7 @@ const CGFloat TJLoaderPullLen = 64.0;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"contentOffset"]) {
         
-        self.layerStrokenValue = - self.scrollView.contentOffset.y;
+        self.layerStrokenValue = self.scrollView.contentOffset.y;
     }else if([keyPath isEqualToString:@"contentSize"]){
         
         self.center = CGPointMake(self.scrollView.bounds.size.width*0.5, self.scrollView.contentSize.height + 32);
@@ -75,14 +73,17 @@ const CGFloat TJLoaderPullLen = 64.0;
 -(void)setLayerStrokenValue:(CGFloat)layerStrokenValue{
     
     _layerStrokenValue = layerStrokenValue;
-    CGFloat value = layerStrokenValue/TJLoaderPullLen;
     
-    //如果不是正在刷新，则渐变动画
+    CGFloat normalScrollLen = self.scrollView.contentSize.height-self.scrollView.bounds.size.height;
+    CGFloat value = (layerStrokenValue-normalScrollLen)/TJLoaderPullLen;
+    
+    //如果不是正在加载，则渐变动画
     if (!self.animating) {
 
+        
     }
     
-    //如果到达临界点，则执行刷新动画
+    //如果到达临界点，则执行加载动画
     if (value > 1 && !self.animating && !self.scrollView.dragging) {
         [self startAnimation];
         if (self.handle) {

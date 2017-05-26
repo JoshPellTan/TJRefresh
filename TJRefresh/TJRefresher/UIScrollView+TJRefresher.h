@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-
-
-
-@class TJRefreshAnimation;
+@class TJRefreshHeader;
 @class TJRefreshFooter;
 
 @interface UIScrollView (TJRefresher)
 
-@property (nonatomic, strong, readonly) TJRefreshAnimation * header;
+@property (nonatomic, strong, readonly) TJRefreshHeader * header;
 
 @property (nonatomic, strong, readonly) TJRefreshFooter * footer;
 

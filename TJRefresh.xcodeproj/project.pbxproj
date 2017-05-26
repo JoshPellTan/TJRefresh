@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		619427561ED5389600FBBF89 /* UIScrollView+TJRefresher.m in Sources */ = {isa = PBXBuildFile; fileRef = 619427551ED5389600FBBF89 /* UIScrollView+TJRefresher.m */; };
-		6194275B1ED56AB500FBBF89 /* TJRefreshAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 619427571ED56AB500FBBF89 /* TJRefreshAnimation.m */; };
+		6194275B1ED56AB500FBBF89 /* TJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 619427571ED56AB500FBBF89 /* TJRefreshHeader.m */; };
 		619427621ED56CB300FBBF89 /* CALayer+TJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 619427611ED56CB300FBBF89 /* CALayer+TJFrame.m */; };
 		619427651ED59F2900FBBF89 /* tempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 619427641ED59F2900FBBF89 /* tempViewController.m */; };
 		619427681ED680BB00FBBF89 /* TJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 619427671ED680BB00FBBF89 /* TJRefreshFooter.m */; };
@@ -24,8 +24,8 @@
 /* Begin PBXFileReference section */
 		619427541ED5389600FBBF89 /* UIScrollView+TJRefresher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TJRefresher.h"; sourceTree = "<group>"; };
 		619427551ED5389600FBBF89 /* UIScrollView+TJRefresher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TJRefresher.m"; sourceTree = "<group>"; };
-		619427571ED56AB500FBBF89 /* TJRefreshAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJRefreshAnimation.m; sourceTree = "<group>"; };
-		619427581ED56AB500FBBF89 /* TJRefreshAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJRefreshAnimation.h; sourceTree = "<group>"; };
+		619427571ED56AB500FBBF89 /* TJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJRefreshHeader.m; sourceTree = "<group>"; };
+		619427581ED56AB500FBBF89 /* TJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJRefreshHeader.h; sourceTree = "<group>"; };
 		619427601ED56CB300FBBF89 /* CALayer+TJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+TJFrame.h"; sourceTree = "<group>"; };
 		619427611ED56CB300FBBF89 /* CALayer+TJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+TJFrame.m"; sourceTree = "<group>"; };
 		619427631ED59F2900FBBF89 /* tempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tempViewController.h; sourceTree = "<group>"; };
@@ -63,8 +63,8 @@
 			children = (
 				619427541ED5389600FBBF89 /* UIScrollView+TJRefresher.h */,
 				619427551ED5389600FBBF89 /* UIScrollView+TJRefresher.m */,
-				619427581ED56AB500FBBF89 /* TJRefreshAnimation.h */,
-				619427571ED56AB500FBBF89 /* TJRefreshAnimation.m */,
+				619427581ED56AB500FBBF89 /* TJRefreshHeader.h */,
+				619427571ED56AB500FBBF89 /* TJRefreshHeader.m */,
 				619427661ED680BB00FBBF89 /* TJRefreshFooter.h */,
 				619427671ED680BB00FBBF89 /* TJRefreshFooter.m */,
 				619427601ED56CB300FBBF89 /* CALayer+TJFrame.h */,
@@ -204,7 +204,7 @@
 				619427561ED5389600FBBF89 /* UIScrollView+TJRefresher.m in Sources */,
 				61A86CA41ED40FD50098AF09 /* AppDelegate.m in Sources */,
 				61A86CA11ED40FD50098AF09 /* main.m in Sources */,
-				6194275B1ED56AB500FBBF89 /* TJRefreshAnimation.m in Sources */,
+				6194275B1ED56AB500FBBF89 /* TJRefreshHeader.m in Sources */,
 				619427651ED59F2900FBBF89 /* tempViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
