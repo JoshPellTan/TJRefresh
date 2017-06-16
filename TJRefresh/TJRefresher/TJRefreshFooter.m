@@ -75,12 +75,15 @@ const CGFloat TJLoaderPullLen = 64.0;
     _layerStrokenValue = layerStrokenValue;
     
     CGFloat normalScrollLen = self.scrollView.contentSize.height-self.scrollView.bounds.size.height;
+    if (self.scrollView.contentSize.height <= 0) {
+        normalScrollLen = 0;
+    }
     CGFloat value = (layerStrokenValue-normalScrollLen)/TJLoaderPullLen;
     
     //如果不是正在加载，则渐变动画
     if (!self.animating) {
 
-        
+        NSLog(@"footer的具体动画");
     }
     
     //如果到达临界点，则执行加载动画
@@ -94,7 +97,7 @@ const CGFloat TJLoaderPullLen = 64.0;
 }
 
 -(void)startAnimation{
-    NSLog(@"开始刷新动画");
+    NSLog(@"开始加载动画");
     self.animating = YES;
     [UIView animateWithDuration:0.5 animations:^{
         UIEdgeInsets inset = self.scrollView.contentInset;
@@ -111,13 +114,13 @@ const CGFloat TJLoaderPullLen = 64.0;
 - (void)endLoading {
     
     [self stopAnimation];
-    NSLog(@"结束刷新");
+    NSLog(@"结束加载");
 }
 
 #pragma mark - stopAnimation
 -(void)stopAnimation{
     
-    NSLog(@"结束刷新动画");
+    NSLog(@"结束加载动画");
     if (!self.animating) {
         return;
     }
